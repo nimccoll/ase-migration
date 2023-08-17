@@ -17,6 +17,7 @@ This folder contains PowerShell scripts to assist in cloning a Windows web appli
 - Make sure you have configured custom backups on the ASE v1 / v2 web application prior to running this script
 - You will have to authenticate to Azure using Connect-AzAccount before running the script
 - The user or service principal used to authenticate must have Contributor access on the storage account and web application
+- Make sure the destination web application has been created in the ASE v3. The script does not create the web application.
 
 **clone/CloneWebApp.ps1**
 - You will have to authenticate to Azure using Connect-AzAccount before running the script
