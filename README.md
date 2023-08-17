@@ -22,3 +22,4 @@ This folder contains PowerShell scripts to assist in cloning a Windows web appli
 **clone/CloneWebApp.ps1**
 - You will have to authenticate to Azure using Connect-AzAccount before running the script
 - The user or service principal used to authenticate must have Reader access on the source resource group and Contributor access on the target resource group
+- Make sure the destination web application does **not** exist.
