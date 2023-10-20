@@ -7,6 +7,9 @@ This folder contains PowerShell scripts to assist in configuring custom backups 
 ## clone
 This folder contains PowerShell scripts to assist in cloning a Windows web application from an ASE v1 / v2 to an ASE v3.
 
+## bulk-migration
+This folder contains PowerShell scripts to assist in migrating all applications on an existing ASE v1 / v2 to a new ASE v3 using either backup and restore or clone. See the [README.md](bulk-migration/README.md) file in this directory for detailed instructions on how to bulk migrate an ASE v1 / v2 to an ASE v3.
+
 ### Pre-requisites
 **backup-restore/CreateASEv1v2-BackupConfig.ps1**
 - Make sure you have already created a storage account and blob container to store the backup files
@@ -23,3 +26,11 @@ This folder contains PowerShell scripts to assist in cloning a Windows web appli
 - You will have to authenticate to Azure using Connect-AzAccount before running the script
 - The user or service principal used to authenticate must have Reader access on the source resource group and Contributor access on the target resource group
 - Make sure the destination web application does **not** exist.
+
+**bulk-migration/ListASEv1v2Apps.ps1**
+- You will have to authenticate to Azure using Connect-AzAccount or az login before running the script
+- The user or service principal used to authenticate must have Reader access on the ASE v1 / v2 resource group
+
+**bulk-migration/MigrateASEv1v2Apps.ps1**
+- You will have to authenticate to Azure using Connect-AzAccount or az login before running the script
+- The user or service principal used to authenticate must have Contributor access on the source resource groups and target resource groups listed in the .csv input file
