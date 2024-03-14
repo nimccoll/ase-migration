@@ -34,3 +34,11 @@ This folder contains PowerShell scripts to assist in migrating all applications 
 **bulk-migration/MigrateASEv1v2Apps.ps1**
 - You will have to authenticate to Azure using Connect-AzAccount or az login before running the script
 - The user or service principal used to authenticate must have Contributor access on the source resource groups and target resource groups listed in the .csv input file
+
+**side-by-side/sidebyside.sh**
+- Access to a bash shell to run the script
+- The user or service principal used to authenticate must have Contributor access on the ASE v2 resource group and the virtual network resouce group. See the [README](./side-by-side/README.md) for additional prerequisites.
+
+**side-by-side/finalizesidebyside.sh**
+- Access to a bash shell to run the script
+- The user or service principal used to authenticate must have Contributor access on the ASE v2 resource group and the virtual network resouce group. See the [README](./side-by-side/README.md) for additional prerequisites.
