@@ -1,0 +1,8 @@
+{
+    "Properties": {
+        "VirtualNetwork": {
+            "Id": "/subscriptions/{your subscription ID}/resourceGroups/{your resource group name}/providers/Microsoft.Network/virtualNetworks/{your virtual network name}/subnets/{your new subnet name}"
+        },
+        "zoneRedundant": "{true|false}"
+    }
+}

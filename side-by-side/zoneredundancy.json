@@ -1,0 +1,6 @@
+{
+    "location":"{your Azure region}",    
+    "Properties": {
+        "zoneRedundant": "{true|false}"
+    }
+}
