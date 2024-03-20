@@ -52,6 +52,10 @@ if [ "$validateResults" = "Success" ]; then
                 echo
                 echo "IP addresses created successfully"
                 echo
+                echo "Here are the new outbound IP addresses for your ASE v3. Please update any network dependencies you may have, such as firewall rules, with these IP addresses before continuing."
+                az rest --method get --uri "${ASE_ID}/configurations/networking?api-version=2022-03-01" --query properties.windowsOutboundIpAddresses --output tsv
+                read -p "Once you have updated your network dependencies, press any key to continue " -n 1
+                echo
                 # List any locks on the virtual network where the ASE v3 will be deployed
                 echo "Listing locks on the virtual network. If any locks are listed, please remove them before proceeding."
                 az lock list --resource-group $vnetResourceGroupName --resource $vnetName --resource-type Microsoft.Network/virtualNetworks

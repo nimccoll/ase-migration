@@ -36,3 +36,12 @@ do
 done
 echo
 echo "Your ASE v2 to ASE v3 migration is complete."
+echo
+echo "Here are your new inbound IP addresses."
+echo "External ASE public inbound IP addresses"
+az rest --method get --uri "${ASE_ID}/configurations/networking?api-version=2022-03-01" --query properties.externalInboundIpAddresses --output tsv
+echo
+echo "Internal ASE private inbound IP addresses"
+az rest --method get --uri "${ASE_ID}/configurations/networking?api-version=2022-03-01" --query properties.internalInboundIpAddresses --output tsv
+echo
+echo "Please update any network dependencies with these new inbound IP addresses."
